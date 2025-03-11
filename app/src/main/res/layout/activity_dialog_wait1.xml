@@ -5,12 +5,6 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".HomePage">
-
-    <Button
-        android:id="@+id/text_sign_out"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="sign_out"/>
+    tools:context=".dialog_wait1">
 
 </androidx.constraintlayout.widget.ConstraintLayout>

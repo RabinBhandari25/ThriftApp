@@ -1,6 +1,5 @@
 package com.example.thrift_app_store;
 
-import static com.google.android.libraries.identity.googleid.GoogleIdTokenCredential.TYPE_GOOGLE_ID_TOKEN_CREDENTIAL;
 
 import android.app.Dialog;
 import android.content.Intent;
@@ -17,9 +16,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
-import androidx.credentials.Credential;
-import androidx.credentials.CustomCredential;
-import androidx.credentials.GetCredentialRequest;
 
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
@@ -28,8 +24,6 @@ import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
-import com.google.android.libraries.identity.googleid.GetGoogleIdOption;
-import com.google.android.libraries.identity.googleid.GoogleIdTokenCredential;
 import com.google.firebase.auth.AuthCredential;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
@@ -81,6 +75,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 //On click of the button  we will authenticate
+                dialog.show();
                 signIn();
             }
         });
@@ -125,7 +120,7 @@ public class MainActivity extends AppCompatActivity {
                             // Sign in success, update UI with the signed-in user's information
                             Log.d(TAG, "signInWithCredential:success");
                             FirebaseUser user = mAuth.getCurrentUser();
-                            Intent i = new Intent(MainActivity.this, Home_page.class);
+                            Intent i = new Intent(MainActivity.this, HomePage.class);
                             startActivity(i);
                             finish();
                             dialog.dismiss();
