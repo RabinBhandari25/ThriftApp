@@ -5,6 +5,13 @@
     <color name="background_color_light"> #d9f2d9</color>
     <color name="text_color">#26767F</color>
     <color name="trial_color_DONOTUSE">#f29696</color>
+    
+    
+    <color name="profile_Bg">#588157</color>
+    <color name="profile_Bg2">#a3b18a</color>
+    <color name="profile_Bg3">#a7c957</color>
+
+
 
 
 </resources>
