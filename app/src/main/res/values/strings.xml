@@ -2,8 +2,8 @@
     <string name="app_name">thriftStore</string>
     <string name="store_name_uppercase">THRIFT STORE</string>
     <string name="slogan">Treasure Hunting Made easy</string>
-    <string name="log_in">LOG IN</string>
+    <string name="Sign_in">SIGN IN</string>
     <string name="Sign_up">SIGN UP</string>
-    <string name="email_address">Email Address</string>
+    <string name="email">Email Address</string>
     <string name="password">Password</string>
 </resources>

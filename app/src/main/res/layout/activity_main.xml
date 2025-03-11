@@ -67,7 +67,7 @@
             android:layout_width="150dp"
             android:layout_height="60dp"
             android:id="@+id/login_btn"
-            android:text="@string/log_in"/>
+            android:text="@string/Sign_in"/>
         <Button
             android:layout_width="150dp"
             android:layout_height="60dp"
