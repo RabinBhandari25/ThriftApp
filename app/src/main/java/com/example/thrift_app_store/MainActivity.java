@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
     Button login, signup;
 
     private static final int RC_SIGN_IN = 1;
-    private static final String TAG = "GOOGLEAUTH";
+    private static final String TAG = "GOOGLE_AUTH";
     GoogleSignInClient nGoogleSignInClient;
     Dialog dialog;
     private FirebaseAuth mAuth;
@@ -95,7 +95,6 @@ public class MainActivity extends AppCompatActivity {
 
         // Result returned from launching the Intent from GoogleSignInApi.getSignInIntent(...);
         if (requestCode == RC_SIGN_IN) {
-            dialog.show();
             Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(data);
             try {
 
@@ -112,6 +111,13 @@ public class MainActivity extends AppCompatActivity {
 
 
     private void firebaseAuthWithGoogle(String idToken) {
+
+        if (idToken == null) {
+            dialog.dismiss();
+            Toast.makeText(MainActivity.this, "Google sign-in failed: ID token is null", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
         AuthCredential credential = GoogleAuthProvider.getCredential(idToken, null);
         mAuth.signInWithCredential(credential)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
