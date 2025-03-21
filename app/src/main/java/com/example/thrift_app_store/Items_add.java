@@ -35,8 +35,8 @@ public class Items_add extends AppCompatActivity {
      EditText title, description, price;
      RadioGroup conditionRadioGroup, productCategoryRadioGroup;
      Button submitButton;
-      private ArrayList<Uri> imageUris = new ArrayList<>();
-      private ArrayList<String> imageUrls = new ArrayList<>();
+       ArrayList<Uri> imageUris = new ArrayList<>();
+       ArrayList<String> imageUrls = new ArrayList<>();
      FirebaseAuth mAuth;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,8 +69,8 @@ public class Items_add extends AppCompatActivity {
                 openImagePicker();
 
 
-                for (Uri uri : imageUris) {
-                    imageUrls.add(uri.toString());
+                for( int i = 0; i<imageUris.size(); i++){
+                    imageUrls.add(String.valueOf(imageUris.get(i)));
                 }
 
             }
