@@ -5,12 +5,48 @@
     <string name="Sign_in">SIGN IN</string>
     <string name="Sign_up">SIGN UP</string>
     <string name="email">Email Address</string>
-    <string name="password">Password</string>
+    <string name="password">Password</string>f
+
+
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>
     <string name="second_fragment_label">Second Fragment</string>
     <string name="next">Next</string>
     <string name="previous">Previous</string>
+
+    <string name="sell">SELL</string>
+
+    <string name="upload_file">Upload File/s</string>
+    <string name="title">Title</string>
+    <string name="title_hint">Write the title of your item</string>
+    <string name="description">Description</string>
+    <string name="description_hint">Tell us about your product</string>
+    <string name="price">Price</string>
+    <string name="price_hint">$ XXXX</string>
+    <string name="condition">Condition</string>
+    <string name="excellent">Excellent</string>
+    <string name="great">Great</string>
+    <string name="good">Good</string>
+    <string name="product_category">What is this product?</string>
+    <string name="furniture">Furniture</string>
+    <string name="electronics">Electronics</string>
+    <string name="women_clothing">Women Clothing</string>
+    <string name="me">Me</string>
+    <string name="test">Test</string>
+    <string name="submit">Submit</string>
+    <string name="upload_photo">Upload photo</string>
+    <string name="delivery_status">Is available for delivery?</string>
+    <string name="yes">YES</string>
+    <string name="no">NO</string>
+
+
+    <string name="email_hint">Email</string>
+    <string name="password_hint">Password</string>
+    <string name="no_account">Don\'t have an account? Sign up</string>
+
+    <string name="sign_up_text">Sign Up</string>
+    <string name="confirm_password_hint">Confirm Password</string>
+    <string name="already_have_account">Already have an account? Log in</string>
 
 
     <string name="please_wait">Please wait....</string>

@@ -1,40 +1,80 @@
 package com.example.thrift_app_store;
 
-/**
- * This class is for the items sold in the app
- * */
+import android.net.Uri;
+
+import java.util.ArrayList;
+
 public class Item {
-    private String item_name;
-    private Double price;
-    private String Description;
+    private String title;
+    private String description;
+    private double price;
+    private String condition;
+    private String category;
 
-    public Item(String item_name, Double price, String description) {
-        this.item_name = item_name;
+
+    //store multiple image
+    private ArrayList<Uri> imageUrls;
+
+
+    // Default constructor required for Firebase
+    public Item() {
+    }
+
+    public Item(String title, String description, double price, String condition, String category, ArrayList<Uri> imageUrls) {
+        this.title = title;
+        this.description = description;
         this.price = price;
-        Description = description;
+        this.condition = condition;
+        this.category = category;
+        this.imageUrls = imageUrls;
     }
 
-    public String getItem_name() {
-        return item_name;
+    // Getters and Setters
+    public String getTitle() {
+        return title;
     }
 
-    public void setItem_name(String item_name) {
-        this.item_name = item_name;
-    }
-
-    public Double getPrice() {
-        return price;
-    }
-
-    public void setPrice(Double price) {
-        this.price = price;
+    public void setTitle(String title) {
+        this.title = title;
     }
 
     public String getDescription() {
-        return Description;
+        return description;
     }
 
     public void setDescription(String description) {
-        Description = description;
+        this.description = description;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
+    }
+
+    public String getCondition() {
+        return condition;
+    }
+
+    public void setCondition(String condition) {
+        this.condition = condition;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
+    }
+//
+//    public ArrayList<String> getImageUrls() {
+//        return imageUrls;
+//    }
+
+    public void setImageUrls(ArrayList<Uri> imageUrls) {
+        this.imageUrls = imageUrls;
     }
 }
