@@ -5,7 +5,7 @@
     <string name="Sign_in">SIGN IN</string>
     <string name="Sign_up">SIGN UP</string>
     <string name="email">Email Address</string>
-    <string name="password">Password</string>f
+    <string name="password">Password</string>
 
 
     <!-- Strings used for fragments for navigation -->
@@ -47,7 +47,10 @@
     <string name="sign_up_text">Sign Up</string>
     <string name="confirm_password_hint">Confirm Password</string>
     <string name="already_have_account">Already have an account? Log in</string>
+    <string name="left">&lt;</string>
+    <string name="right">&gt;</string>
 
+    <string name="user_name">User Name</string>
 
     <string name="please_wait">Please wait....</string>
 

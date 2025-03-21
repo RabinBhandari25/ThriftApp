@@ -20,11 +20,14 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.UserProfileChangeRequest;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 public class Sign_up extends AppCompatActivity {
 
 
-    EditText email, password_first, password_second;
+    EditText email, user, password_first, password_second;
     TextView moveToLogin;
     Button signUp;
     Intent intent;
@@ -45,6 +48,7 @@ public class Sign_up extends AppCompatActivity {
 
 
         email = findViewById(R.id.signUp_email);
+        user = findViewById(R.id.signUp_username);
         password_first = findViewById(R.id.signUp_password);
         password_second = findViewById(R.id.signUp_confirm_password);
 
@@ -113,6 +117,10 @@ public class Sign_up extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()){
+
+                            String user_name = user.getText().toString();
+                            updateUsername(user_name);
+
                             Toast.makeText(Sign_up.this, "Sign-up complete", Toast.LENGTH_LONG).show();
                         }
                         else{
@@ -122,5 +130,43 @@ public class Sign_up extends AppCompatActivity {
                     }
                 });
 
+    }
+
+    public void updateUsername(String newUsername) {
+        // Validate input
+        if (newUsername == null || newUsername.trim().isEmpty()) {
+            Toast.makeText(this, "Username cannot be empty", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        if (newUsername.length() < 3 || newUsername.length() > 20) {
+            Toast.makeText(this, "Username must be 3-20 characters", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        if (user == null) {
+            Toast.makeText(this, "No user signed in", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        // Update Auth profile
+        UserProfileChangeRequest profileUpdates = new UserProfileChangeRequest.Builder()
+                .setDisplayName(newUsername)
+                .build();
+
+        user.updateProfile(profileUpdates)
+                .addOnSuccessListener(unused -> {
+                    FirebaseFirestore.getInstance()
+                            .collection("users")
+                            .document(user.getUid())
+                            .update("username", newUsername)
+                            .addOnSuccessListener(unused1 -> {
+                                Toast.makeText(this, "Username updated", Toast.LENGTH_SHORT).show();
+                            });
+                })
+                .addOnFailureListener(e -> {
+                    Toast.makeText(this, "Update failed: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                });
     }
 }

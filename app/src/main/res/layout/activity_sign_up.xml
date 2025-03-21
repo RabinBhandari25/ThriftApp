@@ -36,6 +36,15 @@
             android:autofillHints="emailAddress"/>
 
         <EditText
+            android:id="@+id/signUp_username"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/user_name"
+            android:inputType="textEmailAddress"
+            android:autofillHints="emailAddress"/>
+
+
+        <EditText
             android:id="@+id/signUp_password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

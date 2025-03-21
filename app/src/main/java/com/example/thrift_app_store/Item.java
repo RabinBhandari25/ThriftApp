@@ -1,8 +1,6 @@
 package com.example.thrift_app_store;
 
-import android.net.Uri;
 
-import java.util.ArrayList;
 
 public class Item {
     private String title;
@@ -12,21 +10,19 @@ public class Item {
     private String category;
 
 
-    //store multiple image
-    private ArrayList<Uri> imageUrls;
+    private String[] images;
 
 
-    // Default constructor required for Firebase
     public Item() {
     }
 
-    public Item(String title, String description, double price, String condition, String category, ArrayList<Uri> imageUrls) {
+    public Item(String title, String description, double price, String condition, String category, String[]  images) {
         this.title = title;
         this.description = description;
         this.price = price;
         this.condition = condition;
         this.category = category;
-        this.imageUrls = imageUrls;
+        this.images = images;
     }
 
     // Getters and Setters
@@ -69,12 +65,12 @@ public class Item {
     public void setCategory(String category) {
         this.category = category;
     }
-//
-//    public ArrayList<String> getImageUrls() {
-//        return imageUrls;
-//    }
 
-    public void setImageUrls(ArrayList<Uri> imageUrls) {
-        this.imageUrls = imageUrls;
+    public String[] getImages() {
+        return images;
+    }
+
+    public void setImages(String[] images) {
+        this.images = images;
     }
 }

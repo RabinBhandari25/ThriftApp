@@ -74,7 +74,7 @@ public class Sign_IN extends AppCompatActivity {
                                     // Login successful
                                     intent = new Intent(Sign_IN.this, HomePage.class);
                                     startActivity(intent);
-                                    finish(); // Close the current activity
+                                    finish();
                                 } else {
                                     // Login failed
                                     handleLoginError(task.getException());
